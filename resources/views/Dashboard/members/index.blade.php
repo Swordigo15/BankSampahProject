@@ -25,8 +25,7 @@
             <tbody>
                 @foreach ($members as $member)
                     <tr>
-                        {{-- <td>{{ $loop->iteration }}</td> --}}
-                        <td>{{ $member->id }}</td>
+                        <td>{{ $loop->iteration }}</td>
                         <td>{{ $member->name }}</td>
                         <td>Rp. {{ $member->sampahs->sum(function($s) { return $s->pivot->jumlah * $s->harga; }) }},00</td>
                         <td>
