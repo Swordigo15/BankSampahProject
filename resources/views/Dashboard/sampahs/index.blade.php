@@ -29,7 +29,7 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $sampah->name }}</td>
                         <td>Rp. {{ $sampah->harga }},00 / {{ $sampah->satuan }}</td>
-                        <td>{{ $sampah->members()->pivot->jumlah }}</td>
+                        <td>{{ $sampah->members->sum(function($s) { return $s->pivot->jumlah; }) }}</td>
                         <td>
                             <a href="/dashboard/sampahs/{{ $sampah->id }}/edit" class="badge bg-warning">
                                 <i class="bi bi-pencil"></i></a>
